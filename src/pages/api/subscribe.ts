@@ -65,7 +65,6 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
     return res.status(200).json({ sessionId: stripeCheckoutSession.id })
 
   } else {
-    //se não for retorna para o frontend que o metodo aceietado por essa rota é post
     res.setHeader('Allow', 'POST')
     res.status(405).end('Method not allowed')
   }

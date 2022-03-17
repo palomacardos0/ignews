@@ -16,7 +16,6 @@ async function buffer(readable: Readable) {
   }
   return Buffer.concat(chunks);
 }
-//por padrão o next tem o formato de entender as requisições, porém neste caso a requisição está vindo com uma stream, logo essa configuração deve desabilitar o entendimento padrão do next sobre o que está vindona requisição
 export const config = {
   api: {
     bodyParser: false
@@ -86,7 +85,6 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
 
     res.json({ received: true })
   } else {
-    //se não for retorna para o frontend que o metodo aceietado por essa rota é post
     res.setHeader('Allow', 'POST')
     res.status(405).end('Method not allowed')
   }

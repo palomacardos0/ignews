@@ -1,11 +1,8 @@
-//função que slava informações no banco de dados
 import { query as q } from 'faunadb'
 import { fauna } from "../../../services/fauna"
 import { stripe } from '../../../services/stripe'
 
 export async function saveSubcription(subscriptionId: string, customerId: string, createAction = false) {
-  //buscar o usuário no banco do FaunaDB com o ID do {customerId}
-  //Salvaar os dados da  subscription no FaunaDB
 
   console.log(subscriptionId, customerId)
 
@@ -40,7 +37,6 @@ export async function saveSubcription(subscriptionId: string, customerId: string
     )
   } else {
     await fauna.query(
-      //replace atualiza todos os campos e o update permite atualizar apenas alguns campos
       q.Replace(
         q.Select(
           "ref",
