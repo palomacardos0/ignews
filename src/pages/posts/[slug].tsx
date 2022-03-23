@@ -47,7 +47,6 @@ export const getServerSideProps: GetServerSideProps = async ({ req, params }) =>
 
   const { slug } = params as Params
 
-  console.log(session)
   if (slug === 'favicon.png') {
     return {
       redirect: {
@@ -69,7 +68,6 @@ export const getServerSideProps: GetServerSideProps = async ({ req, params }) =>
   const prismic = getPrismicClient(req)
 
   const response = await prismic.getByUID<any>('post', String(slug), {})
-  console.log(JSON.stringify(response, null, 2))
 
   const post = {
     slug,
