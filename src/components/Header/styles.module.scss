@@ -1,6 +1,13 @@
 .headerContainer {
   height: 5rem;
   border-bottom: 1px solid var(--gray-800);
+
+  @media (max-width: 920px){
+    nav{
+      display: none;
+    }
+  }
+
 }
 
 .headerContent {
@@ -48,8 +55,22 @@
     }
 
   }
-  button {
+  nav + button {
     margin-left: auto;
   }
-  
+
+}
+.menuButton{
+  display: none;
+  background: none;
+  border: none;
+  margin-right: 1rem;
+  svg{
+    font-size: 2rem;
+    fill: var(--yellow-500);
+  }
+
+  @media (max-width: 920px) {
+    display: block;
+  }
 }
