@@ -19,11 +19,11 @@ export function ToggleMenu(){
       </div>
 
       <nav className={styles.navigationMenu}>
-        <ActiveLink activeClassName={styles.active} href="/">
-            <a>Home</a>
+        <ActiveLink activeClassName={styles.active} href="/" >
+            <a onClick={toggleCloseMenu}>Home</a>
         </ActiveLink>
         <ActiveLink activeClassName={styles.active} href="/posts">
-            <a>Posts</a>
+            <a onClick={toggleCloseMenu}>Posts</a>
         </ActiveLink>
       </nav>
     </div>
